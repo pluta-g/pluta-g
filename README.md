@@ -5,7 +5,6 @@
 - 📫 How to reach me ...
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I also enjoy playing sports including hockey, snowboarding, and soccer.
-I'm working on this project to expand my knowledge in python. I have other projects in the works using java and C#
 
 <!---
 pluta-g/pluta-g is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
