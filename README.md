@@ -4,7 +4,7 @@
 - 💞️ I’m looking to collaborate on any open source projects to help, and learn.
 - 📫 How to reach me ...
 - 😄 Pronouns: He/Him
-- ⚡ Fun fact: I also enjoy playing sports including hockey, snowboarding, and soccer.
+
 
 <!---
 pluta-g/pluta-g is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
