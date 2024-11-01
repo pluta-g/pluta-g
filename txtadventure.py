@@ -7,6 +7,8 @@ from random import randint
 
 from game_save import GameState, save_game, load_game
 
+from inventory import Inventory
+
 #Base class for all characters
 class Character:
   def __init__(self):
@@ -70,7 +72,7 @@ class Player(Character):
 
     #Player method to quit the game.
   def quit(self):
-    print (f"{self.name} can't find the way back home, and dies of starvation.\nR.I.P.")
+    print (f"{self.name} has quit the game.")
     
     #sets health to 0, indicating death.
     self.health = 0
@@ -249,7 +251,7 @@ Commands = {
 
 
 
-
+#Creates a title screen and displays options
 def title_screen():
   print("Welcome to PLACEHOLDER NAME")
   print("1. Start a new game")
@@ -258,12 +260,14 @@ def title_screen():
   choice = input("\nChoose an option (1 or 2)\n")
   return choice
 
+#If the option to start a new game is selected this starts the game
 def start_new_game():
   new_player = Player()
   new_player.name = input("What would you like to name your character \n")
   print(f"{new_player.name} enters a dark cave, searching for adventure.")
   return new_player
 
+#Grabs the players previous save data
 def load_game_state():
   filename = get_save_filename()
   game_state = load_game(filename)
@@ -281,6 +285,28 @@ def load_game_state():
 def get_save_filename():
   return input("Enter the save filename (e.g., savegame_player.log):")
 
+class Player:
+  def __init__(self):
+    self.name = ""
+    self.health = 10
+    self.inventory = Inventory()
+
+  def show_inventory(self):
+    self.inventory.display()
+
+def commands(player):
+  while True:
+    command = input("> ").strip().lower()
+    if command.startswith('add '):
+      item = command[4:]
+      player.inventory.add_item(item)
+    elif command.startswith('remove '):
+      item = command[7:]
+      player.inventory.remove_item(item)
+    elif command == 'inventory':
+      player.show_inventory()
+    else:
+      print("Unknown command.")
 
 player = None
 

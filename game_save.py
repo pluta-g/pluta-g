@@ -13,10 +13,10 @@ class GameState:
       'inventory' : self.inventory
   }
 
-@classmethod
+  @classmethod
 
-def from_dict(cls, data):
-  return cls(data['player_name'], data['inventory'])
+  def from_dict(cls, data):
+    return cls(data['player_name'], data['inventory'])
 
 #Save game state to a file
 def save_game(game_state, filename = 'savegame.log'):
@@ -44,7 +44,7 @@ def load_game(filename = 'savegame.log'):
     print("Error reading the save file")
     return None
 
-if __name__ == '_main_':
+if __name__ == '__main__':
   current_game = GameState("Player1", [])
   save_game(current_game)
 
